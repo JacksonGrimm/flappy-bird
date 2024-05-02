@@ -7,3 +7,6 @@ class Player:
         
     def player_load(this, screen):
         screen.blit(this.image, (this.x, this.y))
+
+    def update_y(this, amount, dt):
+        this.y += amount * dt
