@@ -1,9 +1,5 @@
 import pygame 
-
-#Player Class
-class player:
-    def player_load(screen):
-        screen.blit(player_image, (player_x, player_y))
+from player import Player
 
 
 #Initializes pygame
@@ -21,6 +17,8 @@ player_image = pygame.image.load("flappybird.png")
 player_x = 370
 player_y = 480
 
+bird = Player(player_image, player_x, player_y)
+
 
 #Game screen 
 screen = pygame.display.set_mode((800, 600))
@@ -34,7 +32,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    player.player_load(screen)
+    bird.player_load(screen)
 
     pygame.display.update()
 
